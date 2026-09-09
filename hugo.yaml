@@ -1,0 +1,21 @@
+# Site configuration. Full reference: https://gohugo.io/configuration/
+# PaperMod options: https://github.com/adityatelange/hugo-PaperMod/wiki/Features
+
+# baseURL is overridden in CI with $CI_PAGES_URL, so the placeholder below
+# only matters for local preview.
+baseURL: https://example.org/
+locale: en
+title: Culture & Practices
+theme: PaperMod
+
+enableRobotsTXT: true
+
+params:
+  defaultTheme: auto # respects the reader's light/dark preference
+  ShowCodeCopyButtons: true
+  assets:
+    disableHLJS: true # syntax highlighting is done at build time by Chroma instead
+
+markup:
+  highlight:
+    noClasses: false # use CSS classes so code blocks adapt to light/dark mode

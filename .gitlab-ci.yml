@@ -1,0 +1,15 @@
+image: hugomods/hugo:exts
+
+variables:
+  # Required so CI clones the PaperMod theme submodule
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  stage: deploy
+  script:
+    - hugo --minify --baseURL "${CI_PAGES_URL}/" --destination public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
